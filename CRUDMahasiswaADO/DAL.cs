@@ -41,6 +41,55 @@ namespace CRUDMahasiswaADO
 
             return Convert.ToInt32(outputParam.Value);
         }
+        public DataTable GetMhs()
+        {
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+
+            SqlCommand cmd = new SqlCommand("sp_GetMahasiswa", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            da = new SqlDataAdapter(cmd);
+
+            dtMahasiswa = new DataTable();
+            da.Fill(dtMahasiswa);
+
+            return dtMahasiswa;
+        }
+        public void InsertMhs(string nim, string nama, string alamat, string JenisKelamin, DateTime tanggalLahir, String kodeProdi, byte[] foto)
+        {
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+            SqlTransaction trans = conn.BeginTransaction();
+            try
+            {
+                SqlCommand command = new SqlCommand("sp_InsertMahasiswa", conn);
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("pNIM", nim);
+                command.Parameters.AddWithValue("pNama", nama);
+                command.Parameters.AddWithValue("pAlamat", alamat);
+                command.Parameters.AddWithValue("pTanggalLahir", tanggalLahir);
+                command.Parameters.AddWithValue("pJenisKelamin", JenisKelamin);
+                command.Parameters.AddWithValue("pNmProdi", kodeProdi);
+                command.Parameters.AddWithValue("pFoto", foto);
+
+                command.ExecuteNonQuery();
+                trans.Commit();
+            }
+            catch (Exception ex)
+            {
+                trans.Rollback();
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
 
     }
 }
