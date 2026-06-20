@@ -15,7 +15,6 @@ namespace CRUDMahasiswaADO
 {
     public partial class Form3 : Form
     {
-        DAL dbLogic = new DAL();
         static string connectionString = "Data Source=LAPTOP-PH9T3875\\NAWFAL;Initial Catalog=DBAkademikADO;Integrated Security=True";
 
         SqlConnection conn = new SqlConnection(connectionString);
