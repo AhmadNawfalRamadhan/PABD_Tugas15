@@ -17,9 +17,8 @@ namespace CRUDMahasiswaADO {
     
     
     public class RekapMahasiswa1 : ReportClass {
-
+        
         public RekapMahasiswa1() {
-
         }
         
         public override string ResourceName {
