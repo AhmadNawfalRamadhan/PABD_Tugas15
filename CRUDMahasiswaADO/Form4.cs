@@ -112,7 +112,43 @@ namespace CRUDMahasiswaADO
             legend.Docking = Docking.Right;
             chartProdi.Legends.Add(legend);
         }
-        
+        private void cmbTipe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isInitializing)
+                return;
+
+            if (button == 1)
+            {
+                // Bagian ini kosong sesuai gambar
+            }
+            else
+            {
+                loadDataChart();
+            }
+        }
+
+        // a. Button Load Click Event
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            button = 1;
+            loadDataChart();
+        }
+
+        // b. Button Reset Click Event
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            button = 0;
+            loadDataChart();
+        }
+
+        // c. Button Data Mahasiswa Click Event
+        private void btnDataMahasiswa_Click(object sender, EventArgs e)
+        {
+            Form1 frm1 = new Form1();
+            frm1.Show();
+            this.Hide();
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
