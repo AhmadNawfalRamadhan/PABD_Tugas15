@@ -35,11 +35,11 @@
             this.dtpTanggalMasuk = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.cmbTipe = new System.Windows.Forms.ComboBox();
-            this.loadDataChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartProdi = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.loadDataChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartProdi)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -77,22 +77,22 @@
             this.cmbTipe.Size = new System.Drawing.Size(121, 21);
             this.cmbTipe.TabIndex = 3;
             // 
-            // loadDataChart
+            // chartProdi
             // 
             chartArea1.Name = "ChartArea1";
-            this.loadDataChart.ChartAreas.Add(chartArea1);
+            this.chartProdi.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.loadDataChart.Legends.Add(legend1);
-            this.loadDataChart.Location = new System.Drawing.Point(41, 99);
-            this.loadDataChart.Name = "loadDataChart";
+            this.chartProdi.Legends.Add(legend1);
+            this.chartProdi.Location = new System.Drawing.Point(41, 99);
+            this.chartProdi.Name = "chartProdi";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.loadDataChart.Series.Add(series1);
-            this.loadDataChart.Size = new System.Drawing.Size(747, 300);
-            this.loadDataChart.TabIndex = 4;
-            this.loadDataChart.Text = "chart1";
-            this.loadDataChart.Click += new System.EventHandler(this.chart1_Click);
+            this.chartProdi.Series.Add(series1);
+            this.chartProdi.Size = new System.Drawing.Size(747, 300);
+            this.chartProdi.TabIndex = 4;
+            this.chartProdi.Text = "chart1";
+            this.chartProdi.Click += new System.EventHandler(this.chart1_Click);
             // 
             // button2
             // 
@@ -129,7 +129,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.loadDataChart);
+            this.Controls.Add(this.chartProdi);
             this.Controls.Add(this.cmbTipe);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dtpTanggalMasuk);
@@ -137,7 +137,7 @@
             this.Name = "Form4";
             this.Text = "Form4";
             this.Load += new System.EventHandler(this.Form4_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.loadDataChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartProdi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,7 +149,7 @@
         private System.Windows.Forms.DateTimePicker dtpTanggalMasuk;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cmbTipe;
-        private System.Windows.Forms.DataVisualization.Charting.Chart loadDataChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartProdi;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label2;
