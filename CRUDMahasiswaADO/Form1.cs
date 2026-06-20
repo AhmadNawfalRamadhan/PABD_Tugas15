@@ -291,5 +291,12 @@ namespace CRUDMahasiswaADO
 
             dataGridView1.CellClick += dataGridView1_CellClick;
         }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dBAkademikADODataSet.Mahasiswa' table. You can move, or remove it, as needed.
+            this.mahasiswaTableAdapter.Fill(this.dBAkademikADODataSet.Mahasiswa);
+
+        }
     }
 } 
